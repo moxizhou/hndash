@@ -40,6 +40,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'trackPost': {
           templateUrl: 'trackPost/trackPost.html',
           controller: 'trackPostController'
+        },
+        'month': {
+          templateUrl: 'monthvisual/month.html',
+          controller: 'monthController'
         }
       }
     });

@@ -1,5 +1,4 @@
 angular.module('myApp.search', [] )
-	
 	.factory('search', function($http){
 		var searchObject = {};
 		searchObject.url = "https://hacker-news.firebaseio.com/v0";
