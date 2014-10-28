@@ -56,7 +56,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('server-dev', function (target) {
+  grunt.registerTask('dev', function (target) {
     // Running nodejs in a different process and displaying output on the main console
     var nodemon = grunt.util.spawn({
          cmd: 'grunt',
@@ -101,9 +101,9 @@ module.exports = function(grunt) {
   // grunt deploy is for testing local deployment only, 
   // because Azure is listening to
   // GitHub for merges as a means of continous integration.
-  grunt.registerTask('deploy', function(n) {
+  grunt.registerTask('serve-dev', function(n) {
       grunt.task.run(['build']);
       grunt.task.run(['shell']);
-      grunt.task.run(['server-dev']);
+      grunt.task.run(['dev']);
   });
 };

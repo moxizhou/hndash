@@ -1,3 +1,5 @@
+/*jshint -W004 */
+
 angular.module('myApp.trackPost', [] )
 
 	.controller('trackPostController', function($scope){

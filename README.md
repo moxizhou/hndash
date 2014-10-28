@@ -2,6 +2,9 @@
 
 > The Hacker News Dashboard is a full-stack web application which utilizes the Hacker News API to provide a dashboard for data analysis and visualization.
 
+## Status
+[![Build Status](https://travis-ci.org/jetgrizzly/hndash.svg)](https://travis-ci.org/jetgrizzly/hndash)
+
 ## Team
 
   - __Product Owner__: Will Burgo
