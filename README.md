@@ -5,11 +5,17 @@
 ## Status
 [![Build Status](https://travis-ci.org/jetgrizzly/hndash.svg)](https://travis-ci.org/jetgrizzly/hndash)
 
-## Team
+## Team 1
 
   - __Product Owner__: Will Burgo
-  - __Scrum Master__: Adam Back - "If this were a drug deal, Will, I'd have to shoot you in the face. Next time fucking cut a new branch and just check the fucking code goddammit!!!!"
+  - __Scrum Master__: Adam Back 
   - __Development Team Members__: Oleg Yanchinskiy, Justin Pinili
+
+## Team 2
+
+- __Product Owner__: Moxi Zhou
+- __Scrum Master__: Jeff Gladchun
+- __Development Team Members__: Alex Jeng, Jose Merino
 
 ## Table of Contents
 
@@ -23,7 +29,7 @@
 
 ## Usage
 
-> Our project is split into two repositories. (1) Scraper is the code we used to scrape all the data from the HN API and place it into text files. (2) Scheming-Lion is the general repository that structures our site, queries, features, and inserts the data into our MySQL database using the Sequelize ORM. 
+> Built off of Scheming-Lion, jetgrizzly uses the application to further enhance data visualization, aggregation, and real-time integration. 
 
 ## Our tech stack
 
@@ -54,11 +60,6 @@ sudo npm install -g bower
 npm install
 bower install
 ```
-
-### Roadmap
-
-View the project roadmap [here](https://github.com/Scheming-Lion/Scheming-Lion/issues)
-
 
 ## Contributing
 

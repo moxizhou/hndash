@@ -7,23 +7,8 @@ var username = process.env.DB_USERNAME || credential.username;
 var password = process.env.DB_PASSWORD || credential.password;
 
 // AZUREWEBSITE IMPLEMENTATION
-var sequelize = new Sequelize(databaseName, username, password, {
-  host: 'us-cdbr-azure-west-a.cloudapp.net',
-  define: {
-    underscored: false,
-    freezeTableName: false,
-    syncOnAssociation: true,
-    charset: 'utf8',
-    collate: 'utf8_general_ci',
-    classMethods: {method1: function() {}},
-    instanceMethods: {method2: function() {}},
-    timestamps: true
-  }
-});
-
-// LOCAL HOST IMPLEMENTATION
-// var sequelize = new Sequelize("database", "root", "password", {
-//   host: 'localhost',
+// var sequelize = new Sequelize(databaseName, username, password, {
+//   host: 'us-cdbr-azure-west-a.cloudapp.net',
 //   define: {
 //     underscored: false,
 //     freezeTableName: false,
@@ -35,6 +20,21 @@ var sequelize = new Sequelize(databaseName, username, password, {
 //     timestamps: true
 //   }
 // });
+
+// LOCAL HOST IMPLEMENTATION
+var sequelize = new Sequelize("database", "root", "password", {
+  host: 'localhost',
+  define: {
+    underscored: false,
+    freezeTableName: false,
+    syncOnAssociation: true,
+    charset: 'utf8',
+    collate: 'utf8_general_ci',
+    classMethods: {method1: function() {}},
+    instanceMethods: {method2: function() {}},
+    timestamps: true
+  }
+});
 
 module.exports.Story = sequelize.define('Story', {
   by: Sequelize.STRING,
