@@ -3,14 +3,15 @@
 angular.module('myApp.trackPost', [] )
 
 	.controller('trackPostController', function($scope){
-		$scope.postToTrack;
-		// $scope.userSubmitted;
-		$scope.trackPost = function(url){
-			$scope.loading = true;
-			$scope.show = false; 
+		$scope.trackPost = function(){
+			$scope.postToTrack;
 			$scope.postAuthor = '';
 			$scope.createdAt = '';
-			$scope.text = '';
+			$scope.title = '';
+			$scope.score = '';
+			$scope.comments = '';
+			$scope.loading = true;
+			$scope.show = false; 
 			var url = "https://hacker-news.firebaseio.com/v0/item/";
 			var postId = $scope.postToTrack;
 			var postRef = new Firebase(url + postId);
@@ -24,7 +25,9 @@ angular.module('myApp.trackPost', [] )
 				  var time = snapshot.val().time;
 				  var date = new Date(0);
 				  $scope.createdAt = date.setUTCSeconds(time);
-				  $scope.text = snapshot.val().text;
+				  $scope.score = snapshot.val().score;
+				  $scope.title = snapshot.val().title;
+				  $scope.comments = snapshot.val().kids.length;
 				});
 			}, function (errorObject) {
 			  console.log('The read failed: ' + errorObject.code);
