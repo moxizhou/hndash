@@ -13,8 +13,9 @@ angular.module('myApp.search', [] )
 					url: searchObject.url + "/user/" + userName + ".json",
 				}).success(function(userProfile, status){
 					if(userProfile === null){
-						console.log('sorry not a valid user');
-						reject();
+						console.log('sorry not a valid user ',userName);
+						reject(status);
+						return;
 					}
 					searchObject.storyIds = userProfile.submitted;
 					var searchItems = [];
