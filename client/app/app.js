@@ -13,7 +13,6 @@ var app = angular.module('myApp', [
   ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  console.log(app);
   $stateProvider
     .state('main', {
       url: '/main',

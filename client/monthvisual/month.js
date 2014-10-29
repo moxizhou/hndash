@@ -3,21 +3,25 @@
 // bubble size: proportion of viral posts = # of people with 100+points/total posts
 
 angular.module('myApp.month', [])
-	.controller('monthController', function($scope, $http) {
+	.controller('monthController', function($scope, maxFactory) {
 		$scope.loading = false;
-		console.log("in HERE");
-		var url = "https://hacker-news.firebaseio.com/v0";
 		$scope.searchMonth = function() {
 			$scope.loading = true;
-			console.log("blahhh")
-			$http({
-					method: 'GET',
-					url: url + "/item/",
-				}).success(function(posts) {
-					posts.slice(0,10);
-					console.log(posts);
-				});
-		}
+			maxFactory.maxPost();
+		};
 	})
-	.factory('monthFactory', function() {
+	.factory('maxFactory', function($http) {
+		var maxPost = function() {
+			$http({
+				method: 'GET',
+				url: "https://hacker-news.firebaseio.com/v0/maxitem.json",
+			}).success(function(max) {
+				console.log(max);
+			});
+		};
+
+		return {
+			maxPost: maxPost
+		}
+
 	});
