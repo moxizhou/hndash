@@ -6,6 +6,7 @@ var app = angular.module('myApp', [
   "firebase",
   "d3",
   "myApp.directives",
+  "myApp.directivegraph",
   "myApp.trackUser",
   "myApp.trackPost",
   "myApp.home",

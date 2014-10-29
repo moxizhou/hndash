@@ -23,6 +23,7 @@ angular.module('myApp.directives', [])
 
             var wordsVisual = svgContainer.selectAll("text")
               .data(data);
+            console.log(data);
 
               wordsVisual.attr("class", "update");
 

@@ -2,7 +2,7 @@
 
 angular.module('myApp.trackPost', [] )
 
-	.controller('trackPostController', function($scope){
+	.controller('trackPostController', function($scope, linegraph){
 		$scope.trackPost = function(){
 			$scope.postToTrack;
 			$scope.postAuthor = '';
@@ -28,6 +28,8 @@ angular.module('myApp.trackPost', [] )
 				  $scope.score = snapshot.val().score;
 				  $scope.title = snapshot.val().title;
 				  $scope.comments = snapshot.val().kids.length;
+				  linegraph.link($scope);
+
 				});
 			}, function (errorObject) {
 			  console.log('The read failed: ' + errorObject.code);

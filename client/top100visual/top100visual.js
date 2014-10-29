@@ -24,6 +24,7 @@ angular.module('myApp.top100visual', [] )
           .success(function(data) {
             $scope.storyTitles.push(data.title);
             $scope.wordCount = countWords($scope.storyTitles);
+            console.log($scope)
             wordCloud.link($scope);
             $scope.loading = false;
           });
