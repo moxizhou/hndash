@@ -29,7 +29,7 @@ angular.module('myApp.directivegraph', [])
 		        .range([0, width]);
 			 
 		    var y = d3.scale.linear()
-		        .domain([score-10, score+30])
+		        .domain([score-5, score+20])
 		        .range([height, 0]);
 			 
 		    var line = d3.svg.line()
@@ -57,49 +57,46 @@ angular.module('myApp.directivegraph', [])
 		        .attr("class", "y axis")
 		        .call(d3.svg.axis().scale(y).orient("left"));
 			 
-			var path = graph.append("g")
-				.append("path")
-				.data([data])
-				.attr("class", "line")
-				.attr("d", line);
-				
-		    tick();
+				var path = graph.append("g")
+					.append("path")
+					.data([data])
+					.attr("class", "line")
+					.attr("d", line);
+					
+			    tick();
 		 
-    	function tick() { 
-        // push a new data point onto the back
-        data.push(next());
+	    	function tick() { 
+	        // push a new data point onto the back
+	        data.push(next());
 
-        // update domain
-        x.domain([t - n, t]);
-	
-        // redraw path, shift path left
-        path
-            .attr("d", line)
-            .attr("transform", null)
-            .transition()
-            .duration(500)
-            .ease("linear")
-            .attr("transform", "translate(" + t - 1 + ")")
-            .each("end", tick);
-	
-        // shift axis left
-        axis
-            .transition()
-            .duration(500)
-            .ease("linear")
-            .call(d3.svg.axis().scale(x).orient("bottom"));
-	 
-        // pop the old data point off the front
-        data.shift();	 
-    	} 
-	 
-    		}, 
-    		restrict: 'EA',
-      		scope: {
-        	score: "="
-      	}
-    	};
-
-    
-
+	        // update domain
+	        x.domain([t - n, t]);
+		
+	        // redraw path, shift path left
+	        path
+	            .attr("d", line)
+	            .attr("transform", null)
+	            .transition()
+	            .duration(500)
+	            .ease("linear")
+	            .attr("transform", "translate(" + t - 1 + ")")
+	            .each("end", tick);
+		
+	        // shift axis left
+	        axis
+	            .transition()
+	            .duration(500)
+	            .ease("linear")
+	            .call(d3.svg.axis().scale(x).orient("bottom"));
+		 
+	        // pop the old data point off the front
+	        data.shift();	 
+	    	} 
+		 
+  		}, 
+  		restrict: 'EA',
+    		scope: {
+      	score: "="
+    	}
+	  };
 	})

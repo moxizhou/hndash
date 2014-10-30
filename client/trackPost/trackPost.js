@@ -12,6 +12,7 @@ angular.module('myApp.trackPost', [] )
 			$scope.comments = '';
 			$scope.loading = true;
 			$scope.show = false; 
+			$scope.datenow;
 			var url = "https://hacker-news.firebaseio.com/v0/item/";
 			var postId = $scope.postToTrack;
 			var postRef = new Firebase(url + postId);
@@ -31,8 +32,10 @@ angular.module('myApp.trackPost', [] )
 				  $scope.comments = snapshot.val().kids.length;
 				  linegraph.update($scope);
 				  if (!executing) {
+				  	var offset = -8;
+				  	$scope.datenow = new Date(new Date().getTime() + offset * 3600 * 1000).toUTCString().replace(/ GMT$/, "") + ' Pacific Time';
 				  	executing = true;
-						linegraph.link($scope);
+					linegraph.link($scope);
 				  }
 				});
 			}, function (errorObject) {

@@ -57,5 +57,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'monthController'
     });
         
-  $urlRouterProvider.otherwise("/main");
+  $urlRouterProvider.otherwise("/main/home");
 });
