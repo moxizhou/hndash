@@ -66,7 +66,8 @@ body {
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #ecf0f1;
+    /*background-color: #ecf0f1;*/
+    background-image: url('./images/texture.jpg');
     border-right: 1px solid #eee;
   }
 }
@@ -120,17 +121,32 @@ a:hover {
 }
 
 body {
-  background-color: #bdc3c7;
+  /*background-color: #B4C2CB;*/
+  /*background-image: url('./images/texture2.jpg');*/
+}
+
+html::after {
+  content: "";
+  background: url('./images/texture3.jpg');
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 .btn-lion {
-  color: #fff;
-  background-color: #ff6600;
-  border-color: #ff6600;
+  color: #FFFFFF;
+  background-color: #2980b9;
+  border-color: #FFFFFF;
 }
 
 .btn-lion:hover {
-  color: #fff;
+  color: #2980b9;
+  background-color: #FFFFFF;
+  border-color: #2980b9;
 }
 
 .main {
