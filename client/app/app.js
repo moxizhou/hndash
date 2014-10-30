@@ -6,6 +6,7 @@ var app = angular.module('myApp', [
   "firebase",
   "d3",
   "myApp.directives",
+  "myApp.directivegraph",
   "myApp.trackUser",
   "myApp.trackPost",
   "myApp.home",
@@ -13,7 +14,6 @@ var app = angular.module('myApp', [
   ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  console.log(app);
   $stateProvider
     .state('main', {
       url: '/main',

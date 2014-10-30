@@ -2,7 +2,7 @@
 <p>
 	Track a post on Hacker News &amp get real-time updates.
 </p>
-<form class="form-inline" role="form" ng-submit='trackPost(postToTrack)'>
+<form class="form-inline" role="form" ng-submit='trackPost()'>
   <input type="text" ng-model="postToTrack" class="form-control col-sm-3 col-md-2" placeholder="Enter Post ID">
   <button type="submit" class="search btn btn-lion">Track Post</button>
 </form><br>
@@ -10,5 +10,8 @@
 <div ng-controller='trackPostController' ng-show='show'>
 <span  class='track'>Tracking Post By:</span> {{ postAuthor }}<br/>
 <span  class='track'>Post Created On:</span> {{ createdAt | date : 'medium'}}<br/>
-<span  class='track'>Post Content:</span> "{{ text }}"
+<span  class='track'>Post Title:</span> "{{ title }}" <br/>
+<span  class='track'>Score:</span> "{{ score }}" <br/>
+<span  class='track'>Number of comments:</span> "{{ comments }}" <br/>
+<div id = 'graphhere'> </div>
 </div>
