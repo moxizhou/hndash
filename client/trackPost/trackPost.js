@@ -15,6 +15,7 @@ angular.module('myApp.trackPost', [] )
 			var url = "https://hacker-news.firebaseio.com/v0/item/";
 			var postId = $scope.postToTrack;
 			var postRef = new Firebase(url + postId);
+			var executing = false;
 			// Attach an asynchronous callback to read the data at our post reference
 			postRef.on('value', function (snapshot) {
 			  console.log(snapshot.val());
@@ -28,8 +29,11 @@ angular.module('myApp.trackPost', [] )
 				  $scope.score = snapshot.val().score;
 				  $scope.title = snapshot.val().title;
 				  $scope.comments = snapshot.val().kids.length;
-				  linegraph.link($scope);
-
+				  linegraph.update($scope);
+				  if (!executing) {
+				  	executing = true;
+						linegraph.link($scope);
+				  }
 				});
 			}, function (errorObject) {
 			  console.log('The read failed: ' + errorObject.code);
