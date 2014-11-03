@@ -41,16 +41,6 @@
 * Server - contains (1) a set of query helper functions for easily using the Database (2) a database folder, which contains our code for inserting new data into our database, and (3) a generic server setup for local development (which you most likely will not use now that we have fully populated the database and have it deployed using Azure)
 * Testing - We have some basic testing built out for the front-end code. The backend code is not rigorously tested because that would require read/write access to HN's own database, but we have tested this informally and have confirmed that all datapoints exist.
 
-## Requirements
-
-- Node 0.10.32
-- Express ~4.9.0
-- MySQL ?
-- Angular ~1.2.18
-- etc
-
-## Development
-
 ### Installing Dependencies
 
 From within the root directory:
